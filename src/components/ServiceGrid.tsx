@@ -1,0 +1,20 @@
+import type { FengShuiService } from "@/types/service";
+import { EmptyState } from "./EmptyState";
+import { ServiceCard } from "./ServiceCard";
+
+interface ServiceGridProps {
+  services: FengShuiService[];
+  onReset: () => void;
+}
+
+export function ServiceGrid({ services, onReset }: ServiceGridProps) {
+  if (services.length === 0) return <EmptyState onReset={onReset} />;
+
+  return (
+    <div className="service-grid" aria-live="polite">
+      {services.map((service, index) => (
+        <ServiceCard key={service.id} service={service} index={index} />
+      ))}
+    </div>
+  );
+}
