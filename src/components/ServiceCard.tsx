@@ -11,6 +11,7 @@ import {
   Compass,
   ContactRound,
   ExternalLink,
+  Eye,
   Heart,
   House,
   Sparkles,
@@ -42,9 +43,10 @@ const iconMap: Record<string, LucideIcon> = {
 interface ServiceCardProps {
   service: FengShuiService;
   index: number;
+  onPreview?: (service: FengShuiService) => void;
 }
 
-export function ServiceCard({ service, index }: ServiceCardProps) {
+export function ServiceCard({ service, index, onPreview }: ServiceCardProps) {
   const router = useRouter();
   const cardRef = useRef<HTMLElement>(null);
   const Icon = iconMap[service.icon] ?? Compass;
@@ -66,7 +68,8 @@ export function ServiceCard({ service, index }: ServiceCardProps) {
     return () => observer.disconnect();
   }, [isComingSoon, service.id, service.title]);
 
-  const activate = () => {
+  const handleDirectLaunch = (e?: React.MouseEvent) => {
+    if (e) e.stopPropagation();
     if (isComingSoon) return;
 
     const payload = {
@@ -88,6 +91,15 @@ export function ServiceCard({ service, index }: ServiceCardProps) {
     router.push(service.targetUrl);
   };
 
+  const handleOpenPreview = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (onPreview) {
+      onPreview(service);
+    } else {
+      handleDirectLaunch();
+    }
+  };
+
   return (
     <article
       ref={cardRef}
@@ -100,9 +112,18 @@ export function ServiceCard({ service, index }: ServiceCardProps) {
         service.linkType === "external" ? "（将在新窗口打开）" : ""
       }`}
       aria-disabled={isComingSoon || undefined}
-      onClick={activate}
+      onClick={() => {
+        if (onPreview) {
+          onPreview(service);
+        } else {
+          handleDirectLaunch();
+        }
+      }}
       onKeyDown={(event) => {
-        if (event.key === "Enter") activate();
+        if (event.key === "Enter") {
+          if (onPreview) onPreview(service);
+          else handleDirectLaunch();
+        }
       }}
       style={
         {
@@ -169,7 +190,7 @@ export function ServiceCard({ service, index }: ServiceCardProps) {
         ) : null}
       </div>
 
-      {/* Footer / CTA */}
+      {/* Footer Actions */}
       <div className="service-card__footer">
         <div className="service-card__provider">
           <span className="provider-dot" />
@@ -177,9 +198,26 @@ export function ServiceCard({ service, index }: ServiceCardProps) {
           {service.usageCount ? <span className="usage-tag">{service.usageCount}已测</span> : null}
         </div>
 
-        <div className="service-card__cta" aria-hidden="true">
-          <span>{service.ctaLabel}</span>
-          {service.linkType === "external" ? <ExternalLink size={15} /> : <ArrowUpRight size={16} />}
+        <div className="service-card__action-row">
+          <button
+            type="button"
+            className="service-card__btn-preview"
+            onClick={handleOpenPreview}
+            aria-label={`预览 ${service.title} 测算样例`}
+          >
+            <Eye size={13} />
+            <span>看样例</span>
+          </button>
+
+          <button
+            type="button"
+            className="service-card__btn-launch"
+            onClick={handleDirectLaunch}
+            aria-label={`立即进入 ${service.title}`}
+          >
+            <span>{service.ctaLabel}</span>
+            {service.linkType === "external" ? <ExternalLink size={13} /> : <ArrowUpRight size={14} />}
+          </button>
         </div>
       </div>
     </article>

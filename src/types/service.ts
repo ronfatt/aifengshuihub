@@ -2,6 +2,22 @@ export type ServiceProviderType = "official" | "partner" | "thirdParty";
 
 export type ServiceLinkType = "internal" | "external";
 
+export interface PreviewHighlightItem {
+  dimension: string;
+  score?: string;
+  detail: string;
+}
+
+export interface ServicePreviewData {
+  sampleReportTitle: string;
+  overviewSummary: string;
+  suitableFor: string[];
+  requiredInputs: string[];
+  dimensions: PreviewHighlightItem[];
+  sampleTakeaway: string;
+  faq?: Array<{ q: string; a: string }>;
+}
+
 export interface FengShuiService {
   id: string;
   title: string;
@@ -29,4 +45,5 @@ export interface FengShuiService {
   scenarioIds?: string[];
   rating?: string;
   usageCount?: string;
+  previewData?: ServicePreviewData;
 }

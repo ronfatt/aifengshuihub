@@ -32,6 +32,22 @@ const serviceItems: FengShuiService[] = [
     scenarioIds: ["name-astrology", "wealth-career"],
     rating: "4.9",
     usageCount: "68,000+",
+    previewData: {
+      sampleReportTitle: "《紫微易名 · 名情财三维能量报告样例》",
+      overviewSummary: "基于传统三才五格与紫微四化理论，通过 AI 深度解析名字中蕴藏的能量频率，评估其对个人事业、婚姻与财富的隐形助力。",
+      suitableFor: ["正在考虑起名或改名者", "想测算现有名字是否暗合财运桃花者", "寻求运势破局与能量调理者"],
+      requiredInputs: ["您的中文姓名", "出生年份/月份（可选）", "测算诉求（名/情/财）"],
+      dimensions: [
+        { dimension: "名望格局指数", score: "94 分", detail: "天格与人格相生，声誉磁场稳健，适合从事管理、咨询或公众行业。" },
+        { dimension: "情感姻缘磁场", score: "88 分", detail: "地格温润柔和，利于人际沟通与两性和谐，注意避免过度迁就。" },
+        { dimension: "正偏财富助力", score: "96 分", detail: "总格透出正财星能量，中年后财富积累速度加快，守财能力强劲。" },
+      ],
+      sampleTakeaway: "专家调理锦囊：名字五行偏向‘木火通明’，日常穿搭或办公桌摆设可适当增加青绿与暖红色调以放大气场。",
+      faq: [
+        { q: "测算需要注册或付费吗？", a: "支持免注册即开即测，基础三维评分与核心解读完全免费。" },
+        { q: "测算需要多长时间？", a: "输入名字后，AI 模型通常在 3~5 秒内即可完成推导并生成完整报告。" },
+      ],
+    },
   },
   {
     id: "ai-fengshui-master",
@@ -64,6 +80,22 @@ const serviceItems: FengShuiService[] = [
     scenarioIds: ["wealth-career", "home-space", "destiny-chart"],
     rating: "5.0",
     usageCount: "92,000+",
+    previewData: {
+      sampleReportTitle: "《AI 命理大师 · 私人多轮深度答疑对话样例》",
+      overviewSummary: "基于权威命理大模型，像与一位博通古今的易学大师促膝长谈，随时随地就您的事业、投资、婚恋或家居摆位提出具体问题。",
+      suitableFor: ["面临复杂现实抉择需多维度推演者", "有具体玄学疑问想随时提问者", "希望获得定制化化解方案者"],
+      requiredInputs: ["您的生辰八字（公历/农历）", "您关心的核心问题描述"],
+      dimensions: [
+        { dimension: "八字格局解析", score: "甲木栋梁格", detail: "身旺任财官，具备开拓魄力，适合在变动中把握新赛道。" },
+        { dimension: "近期流年吉凶", score: "吉星拱照", detail: "今年下半年有偏财与贵人星入宫，利于合伙与拓展副业。" },
+        { dimension: "环境动线调理", score: "优化建议", detail: "建议将办公坐向调整为坐北朝南，避开背后走道冲煞。" },
+      ],
+      sampleTakeaway: "大师建议：农历八月至十月为最佳行动窗口期，遇事多向属猴、属牛的长辈或合伙人请教。",
+      faq: [
+        { q: "可以问哪些类型的问题？", a: "包括跳槽抉择、合伙开店、感情合盘、房屋户型风水、吉日挑选等全方位生活场景。" },
+        { q: "AI 解答的依据是什么？", a: "融合《渊海子平》、《三命通会》、《滴天髓》及现代玄学大数据系统。" },
+      ],
+    },
   },
   {
     id: "bazi-chart",
@@ -96,6 +128,21 @@ const serviceItems: FengShuiService[] = [
     scenarioIds: ["destiny-chart", "wealth-career"],
     rating: "4.9",
     usageCount: "54,000+",
+    previewData: {
+      sampleReportTitle: "《四柱八字精盘与十年大运起伏图谱样例》",
+      overviewSummary: "采用天文算法精确校准出生地真太阳时，自动排出年柱、月柱、日柱、时柱，并直观呈现十神旺衰雷达与一生命运大运轨迹。",
+      suitableFor: ["想全景了解自身先天命格与后天大运者", "想排查命中贵人神煞与冲克刑害节点者", "命理学爱好者与专业研习者"],
+      requiredInputs: ["出生年、月、日、时", "出生城市（用于自动换算真太阳时）", "性别"],
+      dimensions: [
+        { dimension: "四柱干支神煞", score: "天乙/文昌同宫", detail: "年柱带福星贵人，月柱见文昌，一生利于学业进阶与贵人提携。" },
+        { dimension: "五行能量平衡", score: "木旺缺金", detail: "木气充盈而金气偏弱，喜土金相生以达命局中和。" },
+        { dimension: "十年大运走势", score: "逢六交运", detail: "当前正行‘壬申’大运，金水相生，财星发力，为一生关键上升期。" },
+      ],
+      sampleTakeaway: "排盘总结：命主格局清贵，中晚年大运走势稳中有升，适合以专长立身，不宜投机博彩。",
+      faq: [
+        { q: "不知道精确出生时辰可以排盘吗？", a: "支持仅凭年月日排前三柱，若补齐时辰可获得更精确的时柱与神煞大运数据。" },
+      ],
+    },
   },
   {
     id: "daily-fortune",
@@ -128,6 +175,18 @@ const serviceItems: FengShuiService[] = [
     scenarioIds: ["wealth-career"],
     rating: "4.8",
     usageCount: "41,000+",
+    previewData: {
+      sampleReportTitle: "《今日个人流日能量卡片样例》",
+      overviewSummary: "每天清晨 6 点自动根据今日天干地支与当值神煞，生成专属于您的当日行动指南与避雷锦囊。",
+      suitableFor: ["每天早晨想快速获取行事宜忌者", "准备签约、洽谈或出行想看吉凶方位者"],
+      requiredInputs: ["出生生肖或八字（用于精准匹配个人日柱）"],
+      dimensions: [
+        { dimension: "今日综合能量", score: "92 分", detail: "日逢‘三合贵人’，精力充沛，适合重要洽谈与方案定稿。" },
+        { dimension: "吉利时辰区间", score: "巳时 / 申时", detail: "上午 9-11 点、下午 3-5 点办事效率最高，易得助力。" },
+        { dimension: "穿搭开运色彩", score: "天青色 / 米白", detail: "有助于平抑急躁情绪，增强人际亲和力。" },
+      ],
+      sampleTakeaway: "今日一句话：‘宜动不宜静，宜合不宜争’，遇到分歧以退为进，财星自聚。",
+    },
   },
   {
     id: "career-wealth",
@@ -160,6 +219,18 @@ const serviceItems: FengShuiService[] = [
     scenarioIds: ["wealth-career"],
     rating: "4.9",
     usageCount: "37,000+",
+    previewData: {
+      sampleReportTitle: "《个人财富爆发周期与职场晋升白皮书样例》",
+      overviewSummary: "透视命局中正财（工资正职）与偏财（投资副业）的强弱分布，精准预测未来 3~5 年内的财运起伏与职业转型窗口期。",
+      suitableFor: ["面临跳槽、加薪谈判或创业合伙抉择者", "近期感觉破财频繁想寻找原因者"],
+      requiredInputs: ["出生公历年月日时", "目前从事行业与岗位"],
+      dimensions: [
+        { dimension: "财富命格属性", score: "食神生财格", detail: "依靠专业技能、创意与口碑实现财富复利，财源绵长。" },
+        { dimension: "爆发窗口预测", score: "2026-2027 年", detail: "流年引动财库，将出现重要晋升或资产增值契机。" },
+        { dimension: "行业适配五行", score: "属火 / 属木", detail: "文化传媒、AI科技、能源咨询等赛道与您命格契合度高达 95%。" },
+      ],
+      sampleTakeaway: "开财运建议：工位左上方（青龙位）宜摆放宽叶绿植，避免堆放尖锐杂物以固守财气。",
+    },
   },
   {
     id: "home-fengshui",
@@ -192,6 +263,18 @@ const serviceItems: FengShuiService[] = [
     scenarioIds: ["home-space"],
     rating: "4.9",
     usageCount: "29,000+",
+    previewData: {
+      sampleReportTitle: "《三元九运空间能量评估与户型调理方案样例》",
+      overviewSummary: "结合 2024-2043 年九运离火当运法则，全方位分析户型朝向、入户玄关、卧室床位与办公书房的风水格局吉凶。",
+      suitableFor: ["新房装修、买房选房或租房入住者", "居家感觉疲惫常失眠需调理磁场者"],
+      requiredInputs: ["房屋朝向（如坐北朝南）", "户型平面图（可选）或核心功能区位置"],
+      dimensions: [
+        { dimension: "明暗财位定位", score: "客厅西南方", detail: "九运当旺生气汇聚点，适宜摆放常青植物或水晶灯催旺。" },
+        { dimension: "卧室睡眠磁场", score: "吉位安床", detail: "床头靠实墙避免对冲房门与镜子，有助于深层睡眠恢复能量。" },
+        { dimension: "动线化煞建议", score: "穿堂风化解", detail: "玄关处建议设置半通透屏风或艺术隔断，以聚气藏风。" },
+      ],
+      sampleTakeaway: "空间改造总结：现代软装调理为主，无需大拆大改，即可让居家动线气场顺畅流通。",
+    },
   },
   {
     id: "relationship",
@@ -224,6 +307,18 @@ const serviceItems: FengShuiService[] = [
     scenarioIds: ["relationship-love"],
     rating: "4.8",
     usageCount: "33,000+",
+    previewData: {
+      sampleReportTitle: "《双人八字合婚与姻缘互动契合度报告样例》",
+      overviewSummary: "超越简单的属相生克，从日柱天干配对、五行喜忌互补与大运同步性三个维度，深度剖析两人的缘分深度与相处之道。",
+      suitableFor: ["恋爱中考虑谈婚论嫁的情侣", "婚后经常有沟通摩擦寻求理解的夫妻", "单身测算正缘年份者"],
+      requiredInputs: ["双方出生年月日（单人测算仅需本人信息）"],
+      dimensions: [
+        { dimension: "五行能量互补度", score: "89 分", detail: "一方水旺利于滋润另一方燥土，日常相处具有天然吸引力。" },
+        { dimension: "性格沟通契合度", score: "82 分", detail: "价值观大方向高度一致，但在金钱规划上需建立定期沟通机制。" },
+        { dimension: "婚恋流年同步期", score: "契合优良", detail: "未来两年内双方大运同步引动子女星与家庭宫，利于成家置业。" },
+      ],
+      sampleTakeaway: "情感锦囊：相遇是命中缘分，相处是后天修行。学会用对方能接受的方式表达关怀。",
+    },
   },
   {
     id: "auspicious-date",
@@ -256,6 +351,18 @@ const serviceItems: FengShuiService[] = [
     scenarioIds: ["wealth-career", "home-space"],
     rating: "4.8",
     usageCount: "25,000+",
+    previewData: {
+      sampleReportTitle: "《重大事项良辰吉日与时辰精选方案样例》",
+      overviewSummary: "根据事项性质（开业、签约、乔迁、领证）结合主角八字，从未来 30~90 天中筛选出大吉日与吉时。",
+      suitableFor: ["准备公司开业/项目签约的创业者", "乔迁新居/动土装修的业主", "筹备订婚领证的新人"],
+      requiredInputs: ["事项类型", "意向时间范围", "主角生辰八字"],
+      dimensions: [
+        { dimension: "首选大吉日", score: "公历 10月18日", detail: "干支‘甲辰日’，逢‘天德合’与‘月财’，万事顺遂。" },
+        { dimension: "黄金启动时辰", score: "辰时（07:00-09:00）", detail: "太阳星入局，贵人登台，最适宜举行揭幕或鸣炮起运仪式。" },
+        { dimension: "冲煞禁忌规避", score: "冲生肖狗", detail: "生肖属狗的嘉宾仪式时宜退避片刻即可化解。" },
+      ],
+      sampleTakeaway: "择吉指南：得天时、占地利、应人和，行事自然事半功倍。",
+    },
   },
 ];
 

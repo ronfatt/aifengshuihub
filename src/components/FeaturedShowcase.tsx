@@ -2,17 +2,20 @@
 
 import {
   ArrowRight,
-  Bot,
   Compass,
   ExternalLink,
+  Eye,
   Sparkles,
   Star,
-  Zap,
 } from "lucide-react";
 import { trackEvent } from "@/lib/analytics";
 import { openExternalLink } from "@/lib/externalLink";
 
-export function FeaturedShowcase() {
+interface FeaturedShowcaseProps {
+  onPreview?: (serviceId: string) => void;
+}
+
+export function FeaturedShowcase({ onPreview }: FeaturedShowcaseProps) {
   const handleLaunchName = () => {
     trackEvent("featured_hero_click", {
       serviceId: "name-number",
@@ -68,9 +71,9 @@ export function FeaturedShowcase() {
             </p>
 
             <div className="showcase-card__preview-box">
-              <div className="preview-pill">✨ 名格能量指数分析</div>
-              <div className="preview-pill">❤️ 姻缘桃花磁场评定</div>
-              <div className="preview-pill">💰 正偏财运助力评级</div>
+              <div className="preview-pill">✨ 名格能量指数分析（94 分）</div>
+              <div className="preview-pill">❤️ 姻缘桃花磁场评定（88 分）</div>
+              <div className="preview-pill">💰 正偏财运助力评级（96 分）</div>
             </div>
 
             <div className="showcase-card__meta">
@@ -88,14 +91,27 @@ export function FeaturedShowcase() {
               </div>
             </div>
 
-            <button
-              type="button"
-              className="showcase-card__cta-btn"
-              onClick={handleLaunchName}
-            >
-              <span>立即 30 秒开始易名测算</span>
-              <ExternalLink size={18} />
-            </button>
+            <div className="showcase-card__cta-row">
+              {onPreview ? (
+                <button
+                  type="button"
+                  className="showcase-card__preview-btn"
+                  onClick={() => onPreview("name-number")}
+                >
+                  <Eye size={15} />
+                  <span>查看样例</span>
+                </button>
+              ) : null}
+
+              <button
+                type="button"
+                className="showcase-card__cta-btn"
+                onClick={handleLaunchName}
+              >
+                <span>立即 30 秒开始测算</span>
+                <ExternalLink size={17} />
+              </button>
+            </div>
           </div>
         </div>
 
@@ -139,14 +155,27 @@ export function FeaturedShowcase() {
               </div>
             </div>
 
-            <button
-              type="button"
-              className="showcase-card__cta-btn showcase-card__cta-btn--purple"
-              onClick={handleLaunchBazi}
-            >
-              <span>探索八字大运排盘</span>
-              <ArrowRight size={18} />
-            </button>
+            <div className="showcase-card__cta-row">
+              {onPreview ? (
+                <button
+                  type="button"
+                  className="showcase-card__preview-btn showcase-card__preview-btn--purple"
+                  onClick={() => onPreview("bazi-chart")}
+                >
+                  <Eye size={15} />
+                  <span>查看样例</span>
+                </button>
+              ) : null}
+
+              <button
+                type="button"
+                className="showcase-card__cta-btn showcase-card__cta-btn--purple"
+                onClick={handleLaunchBazi}
+              >
+                <span>探索八字大运排盘</span>
+                <ArrowRight size={17} />
+              </button>
+            </div>
           </div>
         </div>
       </div>

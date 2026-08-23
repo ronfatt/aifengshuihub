@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { services } from "@/data/services";
 import { trackEvent } from "@/lib/analytics";
+import type { FengShuiService } from "@/types/service";
 import { CategoryFilter } from "./CategoryFilter";
 import { DailyEnergyWidget } from "./DailyEnergyWidget";
 import { FeaturedShowcase } from "./FeaturedShowcase";
@@ -11,12 +12,14 @@ import { Header } from "./Header";
 import { Hero } from "./Hero";
 import { ScenarioWizard } from "./ScenarioWizard";
 import { ServiceGrid } from "./ServiceGrid";
+import { ServicePreviewModal } from "./ServicePreviewModal";
 import { TrustBar } from "./TrustBar";
 
 export function ServiceCatalog() {
   const [query, setQuery] = useState("");
   const [category, setCategory] = useState("all");
   const [activeScenario, setActiveScenario] = useState<string | null>(null);
+  const [previewService, setPreviewService] = useState<FengShuiService | null>(null);
 
   useEffect(() => {
     trackEvent("page_view", { page: "brand_funnel_hub" });
@@ -72,6 +75,13 @@ export function ServiceCatalog() {
     }
   };
 
+  const handleOpenPreviewById = (serviceId: string) => {
+    const found = services.find((s) => s.id === serviceId);
+    if (found) {
+      setPreviewService(found);
+    }
+  };
+
   return (
     <>
       <Header />
@@ -88,9 +98,9 @@ export function ServiceCatalog() {
             />
           </div>
 
-          {/* 3. Flagship Showcase Spotlight (Highlighting Purple/Gold Crown Jewels) */}
+          {/* 3. Flagship Showcase Spotlight */}
           <div id="featured">
-            <FeaturedShowcase />
+            <FeaturedShowcase onPreview={handleOpenPreviewById} />
           </div>
 
           {/* 4. Complete Services Matrix Section */}
@@ -113,7 +123,11 @@ export function ServiceCatalog() {
               }}
             />
 
-            <ServiceGrid services={filteredServices} onReset={reset} />
+            <ServiceGrid
+              services={filteredServices}
+              onReset={reset}
+              onPreview={(service) => setPreviewService(service)}
+            />
           </section>
 
           {/* 5. Daily Interactive Widget (Retention Hook) */}
@@ -126,6 +140,12 @@ export function ServiceCatalog() {
         </div>
       </main>
       <Footer />
+
+      {/* Global Quick Preview Modal */}
+      <ServicePreviewModal
+        service={previewService}
+        onClose={() => setPreviewService(null)}
+      />
     </>
   );
 }
