@@ -32,7 +32,7 @@ export function Header() {
     <>
       <header className="site-header">
         <div className="site-header__inner page-container">
-          <a href="#top" className="site-header__brand" aria-label="Enhance Fengshui 矩阵首页">
+          <a href="#top" className="site-header__brand" aria-label="易恒星风水命理 矩阵首页">
             <BrandLogo />
           </a>
 

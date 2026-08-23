@@ -14,7 +14,7 @@ export function Hero({ search, onSearchChange }: HeroProps) {
       <div className="hero__copy">
         <div className="hero__pill-tag">
           <Sparkles size={14} />
-          <span>ENHANCE FENGSHUI · 东方命理 × 现代 AI 矩阵</span>
+          <span>易恒星 · 东方命理 × 现代 AI 矩阵</span>
         </div>
 
         <h1 id="hero-title">

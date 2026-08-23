@@ -15,7 +15,7 @@ const matrixLinks = [
 ];
 
 const brandLinks = [
-  { label: "关于 Enhance", href: "#top" },
+  { label: "关于 易恒星", href: "#top" },
   { label: "学术体系与方法论", href: "#methodology" },
   { label: "隐私保护协议", href: "#footer" },
   { label: "服务条款与免责", href: "#footer" },
@@ -72,7 +72,7 @@ export function Footer() {
         <div className="site-footer__brand">
           <BrandLogo />
           <p className="brand-mission">
-            Enhance Fengshui 致力于将千年中医与易学宇宙观，通过现代 AI 大模型与现代数据科学进行系统化重构，为现代人提供更高效、更具确定性的高维生活决策参考。
+            易恒星风水命理 致力于将千年中医与易学宇宙观，通过现代 AI 大模型与现代数据科学进行系统化重构，为现代人提供更高效、更具确定性的高维生活决策参考。
           </p>
         </div>
 
@@ -111,7 +111,7 @@ export function Footer() {
           免责声明：本平台及旗下矩阵工具所提供之命理、风水、运势与姓名分析内容，均基于传统易学典籍考订与算法统计推导，旨在作为个人修身养性、生活规划与空间美化之文化参考，不构成任何医疗、法律或财务投资的确定性承诺。
         </p>
         <div className="legal-bottom-bar">
-          <p>© {new Date().getFullYear()} Enhance Fengshui Astrology Matrix. 保留所有权利。</p>
+          <p>© {new Date().getFullYear()} 易恒星风水命理 (Yi Heng Xing Astrology Matrix). 保留所有权利。</p>
           <div className="legal-tags">
             <span>三元九运</span>
             <span>紫微易名</span>

@@ -1,6 +1,6 @@
 export function BrandLogo() {
   return (
-    <span className="brand-logo" aria-label="Enhance Fengshui Astrology">
+    <span className="brand-logo" aria-label="易恒星风水命理">
       <svg
         className="brand-logo__mark"
         viewBox="0 0 52 52"
@@ -28,8 +28,8 @@ export function BrandLogo() {
         <circle cx="26" cy="26" r="3" fill="#4DD6E4" />
       </svg>
       <span className="brand-logo__copy">
-        <strong>增强风水</strong>
-        <span>ENHANCE FENGSHUI ASTROLOGY</span>
+        <strong>易恒星风水命理</strong>
+        <span>YI HENG XING FENGSHUI & ASTROLOGY</span>
       </span>
     </span>
   );
