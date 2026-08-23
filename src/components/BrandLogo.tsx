@@ -29,7 +29,7 @@ export function BrandLogo() {
       </svg>
       <span className="brand-logo__copy">
         <strong>易恒星风水命理</strong>
-        <span>YI HENG XING FENGSHUI & ASTROLOGY</span>
+        <span>ENHANCE FENGSHUI & ASTROLOGY</span>
       </span>
     </span>
   );
