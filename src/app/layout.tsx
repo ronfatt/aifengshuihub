@@ -1,8 +1,8 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
 
-const title = "Enhance Fengshui Astrology｜风水命理服务聚合平台";
-const description = "聚合风水、八字、每日运势、择日、家居风水、事业财运、感情与姓名号码服务，快速找到适合你的专业入口。";
+const title = "Enhance Fengshui｜东方命理 × 现代 AI 专业服务矩阵";
+const description = "一站式聚合紫微易名、AI 风水命理大师、八字专业排盘、流日运势、家居风水与事业求财。东方古籍智慧赋能现代高维决策。";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://enhancefengshui.com"),
@@ -16,15 +16,15 @@ export const metadata: Metadata = {
     type: "website",
     locale: "zh_CN",
     url: "/services",
-    siteName: "Enhance Fengshui Astrology",
+    siteName: "Enhance Fengshui Astrology Matrix",
   },
-  twitter: { card: "summary", title, description },
+  twitter: { card: "summary_large_image", title, description },
 };
 
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: "#070B10",
+  themeColor: "#06090E",
   colorScheme: "dark",
 };
 

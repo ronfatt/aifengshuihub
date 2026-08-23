@@ -1,17 +1,18 @@
 "use client";
 
-import { Menu, UserRound } from "lucide-react";
+import { Menu, Sparkles, UserRound } from "lucide-react";
 import { useEffect, useState } from "react";
 import { trackEvent } from "@/lib/analytics";
 import { BrandLogo } from "./BrandLogo";
 import { MobileMenu } from "./MobileMenu";
 
 const navItems = [
-  { label: "首页", href: "#top" },
-  { label: "服务", href: "#services" },
-  { label: "工具", href: "#services" },
-  { label: "学习", href: "#footer" },
-  { label: "关于我们", href: "#footer" },
+  { label: "矩阵首页", href: "#top" },
+  { label: "智能导向", href: "#scenario-wizard" },
+  { label: "旗舰王牌", href: "#featured" },
+  { label: "全部服务", href: "#services" },
+  { label: "每日运势", href: "#daily-widget" },
+  { label: "学术体系", href: "#methodology" },
 ];
 
 export function Header() {
@@ -24,14 +25,14 @@ export function Header() {
 
   const handleMemberClick = () => {
     trackEvent("member_center_click", { location: menuOpen ? "mobile_menu" : "header" });
-    window.location.assign("/member");
+    window.location.assign("https://www.enhancefengshui.com/auth");
   };
 
   return (
     <>
       <header className="site-header">
         <div className="site-header__inner page-container">
-          <a href="#top" className="site-header__brand" aria-label="Enhance Fengshui 首页">
+          <a href="#top" className="site-header__brand" aria-label="Enhance Fengshui 矩阵首页">
             <BrandLogo />
           </a>
 
@@ -49,18 +50,30 @@ export function Header() {
           </nav>
 
           <div className="header-actions">
-            <button className="member-button" onClick={handleMemberClick}>会员中心</button>
+            <button className="member-button" onClick={handleMemberClick}>
+              <Sparkles size={14} className="member-sparkle" />
+              <span>会员专属中心</span>
+            </button>
             <button className="user-button" onClick={handleMemberClick} aria-label="打开会员中心">
               <UserRound size={19} aria-hidden="true" />
             </button>
           </div>
 
-          <button className="mobile-menu-button" onClick={() => setMenuOpen(true)} aria-label="打开菜单" aria-expanded={menuOpen}>
+          <button
+            className="mobile-menu-button"
+            onClick={() => setMenuOpen(true)}
+            aria-label="打开菜单"
+            aria-expanded={menuOpen}
+          >
             <Menu size={24} aria-hidden="true" />
           </button>
         </div>
       </header>
-      <MobileMenu open={menuOpen} onClose={() => setMenuOpen(false)} onMemberClick={handleMemberClick} />
+      <MobileMenu
+        open={menuOpen}
+        onClose={() => setMenuOpen(false)}
+        onMemberClick={handleMemberClick}
+      />
     </>
   );
 }

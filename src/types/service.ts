@@ -23,4 +23,10 @@ export interface FengShuiService {
   featured: boolean;
   sortOrder: number;
   ctaLabel: string;
+  badges?: string[];
+  highlights?: string[];
+  estimatedTime?: string;
+  scenarioIds?: string[];
+  rating?: string;
+  usageCount?: string;
 }

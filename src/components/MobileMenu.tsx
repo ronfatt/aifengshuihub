@@ -3,7 +3,14 @@
 import { X } from "lucide-react";
 import { BrandLogo } from "./BrandLogo";
 
-const links = ["首页", "服务", "工具", "学习", "关于我们"];
+const navLinks = [
+  { label: "矩阵首页", href: "#top" },
+  { label: "智能导向", href: "#scenario-wizard" },
+  { label: "旗舰王牌", href: "#featured" },
+  { label: "全部服务", href: "#services" },
+  { label: "每日运势", href: "#daily-widget" },
+  { label: "学术体系", href: "#methodology" },
+];
 
 interface MobileMenuProps {
   open: boolean;
@@ -23,20 +30,20 @@ export function MobileMenu({ open, onClose, onMemberClick }: MobileMenuProps) {
           </button>
         </div>
         <nav aria-label="移动端主导航">
-          {links.map((link, index) => (
+          {navLinks.map((item, index) => (
             <a
-              key={link}
-              href={index === 0 ? "#top" : index === 1 ? "#services" : "#footer"}
+              key={item.label}
+              href={item.href}
               className={index === 0 ? "is-active" : ""}
               aria-current={index === 0 ? "page" : undefined}
               onClick={onClose}
               tabIndex={open ? 0 : -1}
             >
-              {link}
+              {item.label}
             </a>
           ))}
           <a
-            href="/member"
+            href="https://www.enhancefengshui.com/auth"
             className="mobile-menu__member"
             onClick={(event) => {
               event.preventDefault();
@@ -45,7 +52,7 @@ export function MobileMenu({ open, onClose, onMemberClick }: MobileMenuProps) {
             }}
             tabIndex={open ? 0 : -1}
           >
-            会员中心
+            会员专属中心
           </a>
         </nav>
       </aside>
